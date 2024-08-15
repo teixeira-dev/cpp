@@ -2,17 +2,6 @@
 
 using namespace std;
 
-void unique_subarrays(vector<int> a, vector<int> b, int i = 0){
-    for(auto it: b) cout << it << " ";
-    cout << endl;
-    for(int ind = i; ind < a.size(); ind++){
-        if(ind > i && a[ind] == a[ind - 1]) continue;
-        b.push_back(a[ind]);
-        unique_subarrays(a, b, ind + 1);
-        b.pop_back();
-    }
-}
-
 int main(){
     vector<pair<int, int>> a[6];
     a[0] = {{1, 4}, {2, 4}};
